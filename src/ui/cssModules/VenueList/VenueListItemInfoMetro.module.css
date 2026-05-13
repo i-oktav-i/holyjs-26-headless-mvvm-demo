@@ -1,0 +1,12 @@
+.panel {
+  flex: 1 0 100%;
+}
+
+.list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  color: #334155;
+  font-size: 14px;
+}

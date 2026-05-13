@@ -1,0 +1,31 @@
+.card {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.header {
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 20px;
+  }
+}

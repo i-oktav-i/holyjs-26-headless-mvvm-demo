@@ -1,0 +1,325 @@
+.list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.item {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  min-height: 56px;
+  padding: 15px 16px;
+  box-sizing: border-box;
+}
+
+.detailsContainer {
+  position: fixed;
+  overflow: visible;
+  border: 1px solid rgba(14, 116, 144, 0.2);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+  animation: slideOverList 0.2s ease-out;
+
+  &::backdrop {
+    backdrop-filter: blur(4px);
+  }
+}
+
+.details {
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 18px;
+}
+
+.detailsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.detailsTitle,
+.detailsAction {
+  margin: 0;
+}
+
+.detailsTitle {
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.closeButton {
+  border: 0;
+  background: transparent;
+  color: #0f766e;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.openButton {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #082f49;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.openButton span {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.metroPanel {
+  position: relative;
+  flex: 1 0 100%;
+}
+
+.metroList {
+  position: absolute;
+  left: calc(100% + 14px);
+  z-index: 3;
+  display: grid;
+  gap: 8px;
+  width: min(220px, 42vw);
+  margin: 0;
+  padding: 16px 18px 16px 32px;
+  border: 1px solid rgba(14, 116, 144, 0.2);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+  color: #334155;
+  font-size: 14px;
+  transform: translateY(-50%);
+  animation: slideMetroAside 0.2s ease-out;
+}
+
+.directoryList {
+  display: grid;
+  gap: 8px;
+}
+
+.directoryItem {
+  overflow: hidden;
+  border: 1px solid #d6d3d1;
+  border-radius: 8px;
+  background: #fffdf7;
+}
+
+.directorySummary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  min-height: 54px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+}
+
+.directoryName {
+  min-width: 0;
+  margin: 0;
+  color: #1c1917;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.directoryOpenButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 106px;
+  justify-content: center;
+  padding: 8px 10px;
+  border: 1px solid #0f766e;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.directoryOpenButton span {
+  width: 14px;
+  color: #fef3c7;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.directoryDetails {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0 14px 14px;
+}
+
+.directoryDetailRow {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 16px;
+  padding: 11px 0;
+  border-top: 1px solid #e7e5e4;
+}
+
+.directoryDetailRow dt,
+.directoryDetailRow dd {
+  margin: 0;
+}
+
+.directoryDetailRow dd {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.directoryLabel {
+  color: #78716c;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.directoryValue {
+  color: #1c1917;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.directoryToggleButton,
+.directoryMetroHeader button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #b45309;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.directoryMetro {
+  flex: 1 0 100%;
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  background: #fffbeb;
+}
+
+.directoryMetroHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #78350f;
+  font-size: 13px;
+}
+
+.directoryMetroList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.directoryMetroList li {
+  padding: 5px 8px;
+  border: 1px solid #bae6fd;
+  border-radius: 999px;
+  background: #f0f9ff;
+  color: #075985;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+@keyframes slideOverList {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideMetroAside {
+  from {
+    opacity: 0;
+    transform: translate(-14px, -50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .list {
+    grid-template-columns: 1fr;
+    min-height: 360px;
+    padding-bottom: 240px;
+  }
+
+  .itemHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .details {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .metroList {
+    position: static;
+    width: auto;
+    transform: none;
+    animation: none;
+  }
+}
